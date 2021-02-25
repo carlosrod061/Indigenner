@@ -1,0 +1,70 @@
+*{
+    font-family: 'Good Times', arial;
+}
+
+.navbar-nav ul li{
+    padding-left: 10px !important;
+}
+
+
+.logo{
+    height: 60px !important;
+    width: 60px !important; 
+}
+
+
+.logo{
+    animation: tiktak 2000ms infinite;
+}
+
+@keyframes tiktak{
+    0%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(80%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.navbar-brand{
+    font-size: medium;
+}
+
+
+.navbar-collapse{
+    font-size:small;
+}
+
+header{
+    background: #444C71 !important;
+}
+
+body{
+    background-color: #6B868F;
+}
+
+.breadcrumb{
+    background-color: #4D6F7B;
+    box-shadow: 6px 4px 3px 2px black;
+}
+
+::before{
+    color: white !important;
+}
+
+#lateral{
+    background-color: #4D6F7B;
+    min-height:6rem !important;
+    box-shadow: 6px 4px 3px 2px black;
+}
+
+.contenido{
+    min-height: 30rem;
+}
+
+footer{
+    height: 5rem;
+}
