@@ -68,3 +68,37 @@ body{
 footer{
     height: 5rem;
 }
+
+.info-game{
+    box-shadow: 6px 4px 1px 0.4px black;
+}
+
+.card-game:hover{
+    box-shadow: 10px 5px 5px blue;
+}
+
+#destacados{
+    animation: ampliar 5000ms infinite;
+}
+
+@keyframes ampliar{
+    0%{
+        font-weight:lighter;
+        
+    }
+    25%{
+        color: lightgreen;
+    }
+    50%{
+       font-weight: bold;
+       color: white;
+    }
+    75%{
+        font-weight: bolder;
+        color: lightgreen;
+    }
+    100%{
+        color: white;
+    }
+
+}

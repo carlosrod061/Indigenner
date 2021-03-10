@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const ControllerProxy = require('../controllers/ControllerProxy');
+const Inicio = require('../controllers/Inicio');
 
 
-router.get('/',ControllerProxy.list);
+router.get('/',Inicio.list);
 
 module.exports = router;
