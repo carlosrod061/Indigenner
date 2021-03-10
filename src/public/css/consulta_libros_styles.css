@@ -1,0 +1,44 @@
+#mainNav{
+    background-color: #2c4cbc;
+}
+nav{
+    background-color: #463333;
+}
+body{
+    background-color: white;
+}
+#footerp{
+    background-color: #2c4cbc;
+    display: block;
+    color: white;
+}
+footer{
+    background-color:  #463333;
+    color: white;
+    flex-shrink: none;
+}
+#footerp{
+    align-content: center;
+}
+.navbar-brand{
+    color: white;
+}
+.nav-item a{
+    color:white;
+}
+#contenido{
+    margin-top: 10rem;
+}
+
+.card{
+    background-color: #A3682E;
+    color: white;
+}
+
+.table thead{
+  color: white;
+}
+
+body{
+    background-color: #F3C28A;
+}

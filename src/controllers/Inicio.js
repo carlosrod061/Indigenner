@@ -2,7 +2,7 @@ const controller = {};
 
 
 controller.list = (req, res) => {
-    res.render('consulta_libros');
+    res.render('inicio');
 };
 
 controller.list = (req, res) => {
