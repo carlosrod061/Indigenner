@@ -4,6 +4,7 @@
   "description": "",
   "main": "consulta_libros.js",
   "scripts": {
+    "start": "nodemon src/conexion.js",
     "dev": "nodemon src/conexion.js"
   },
   "keywords": [],
