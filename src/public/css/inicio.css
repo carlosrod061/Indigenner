@@ -1,0 +1,16 @@
+
+.info-game{
+    box-shadow: 6px 4px 1px 0.4px black;
+}
+
+.card-game:hover{
+    box-shadow: 10px 5px 5px blue;
+}
+
+#destacados{
+    animation: ampliar 5000ms infinite;
+}
+
+.destacados{
+    box-shadow: 6px 4px 1px 0.4px black;
+}

@@ -47,7 +47,7 @@ body{
 }
 
 .breadcrumb{
-    background-color: #4D6F7B;
+    background-color: rgb(52, 58, 64);;
     box-shadow: 6px 4px 3px 2px black;
 }
 
@@ -56,8 +56,8 @@ body{
 }
 
 #lateral{
-    background-color: #4D6F7B;
-    min-height:6rem !important;
+    background-color: rgb(52, 58, 64);
+    max-height: 26rem !important;
     box-shadow: 6px 4px 3px 2px black;
 }
 
@@ -80,25 +80,34 @@ footer{
 #destacados{
     animation: ampliar 5000ms infinite;
 }
-
+.titulo{
+    background-color:  rgb(52, 58, 64);;
+   color: white;
+}
 @keyframes ampliar{
     0%{
-        font-weight:lighter;
-        
-    }
-    25%{
-        color: lightgreen;
+      color: white;
     }
     50%{
-       font-weight: bold;
-       color: white;
+        color: rgb(26, 113, 218);
     }
-    75%{
-        font-weight: bolder;
-        color: lightgreen;
-    }
-    100%{
-        color: white;
-    }
+}
 
+hr{
+    border-top: 1px solid white;
+}
+a{
+    color: white !important;
+    font-size: small;
+    text-decoration: none;
+}
+
+.menulateral a:hover{
+    text-decoration: none;
+    font-size: 15px;
+    color: blue;
+}
+
+nav a:hover{
+    font-size: 15px;
 }

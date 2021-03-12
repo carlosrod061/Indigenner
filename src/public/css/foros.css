@@ -1,0 +1,12 @@
+.destacados{
+    box-shadow: 6px 4px 1px 0.4px black;
+}
+
+.table{
+    font-size: small;
+    font-weight: lighter;
+}
+
+.content-table{
+    text-transform: lowercase;
+}
