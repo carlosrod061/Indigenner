@@ -4,11 +4,14 @@ const router = express.Router();
 const Inicio = require('../controllers/Inicio');
 const Foros = require('../controllers/Foros');
 const Juegos = require ('../controllers/Juegos');
+const Novedades = require ('../controllers/Novedades');
 
 router.get('/',Inicio.list);
 
 router.get('/foros',Foros.list);
 
 router.get('/juegos',Juegos.list)
+
+router.get('/novedades',Novedades.list)
 
 module.exports = router;
