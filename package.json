@@ -1,8 +1,8 @@
 {
-  "name": "Biblioteca",
+  "name": "Indiginner",
   "version": "1.0.0",
   "description": "",
-  "main": "consulta_libros.js",
+  "main": "Inicio.js",
   "scripts": {
     "start": "node src/conexion.js",
     "dev": "nodemon src/conexion.js"
@@ -12,10 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "alertifyjs": "^1.13.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-myconnection": "^1.0.4",
     "express-session": "^1.17.1",
+    "firebase-admin": "^9.5.0",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1"
   },
