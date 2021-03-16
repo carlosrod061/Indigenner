@@ -3,6 +3,9 @@ const app = express();
 //Modulo para recargar el proyecto automaticamente.
 const morgan = require('morgan');
 const path = require('path');
+const flash = require('connect-flash');
+// express-toastr
+const toastr = require('express-toastr');
 
 
 //Modulo para sesiones
