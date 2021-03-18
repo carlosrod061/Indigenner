@@ -9,6 +9,7 @@ const Juegos = require ('../controllers/Juegos');
 const Novedades = require ('../controllers/Novedades');
 const Iniciar = require ('../controllers/Iniciar');
 const Registrarse = require('../controllers/Registrarse');
+const Desarrollador = require('../controllers/Desarrollador');
 
 router.get('/',Inicio.list);
 
@@ -21,6 +22,8 @@ router.get('/novedades',Novedades.list)
 router.get('/iniciarsesion',Iniciar.list);
 
 router.get('/registrarse',Registrarse.list);
+
+router.get('/registrarse',Desarrollador.list);
 
 router.post('/new-user',Registrarse.newUser);
 
