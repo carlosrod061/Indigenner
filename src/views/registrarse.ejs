@@ -24,7 +24,20 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <script src="js/registrarse.js"></script>
+
 </head>
 
 <body>
@@ -36,7 +49,11 @@
             <header class="col-md-12">
 
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
+                 <% if (data == "Failed") { %>
+                    <script>
+                        alertify.warning("El nombre de usuario ya existe, pruebe con otro.");
+                    </script>
+                 <% } %> 
 
                     <div class="col-md-1">
                         <img class="logo d-block w-50 h-20 float-left mr-2" src="img/Logo.jpeg" alt="100">
@@ -112,7 +129,6 @@
 
         <div class="contenido row pt-4 ml-4">
 
-
             <div class="wrapper fadeInDown">
                 <div id="formContent">
                     <!-- Tabs Titles -->
@@ -122,12 +138,12 @@
                         <img src="/img/user.png" id="icon" alt="User Icon" />
                     </div>
 
-                    
+
                     <form action="/new-user" method="post">
-                        <input type="text" class="fadeIn second" name="nombre" placeholder="nombre completo">
-                        <input type="text" class="fadeIn second" name="user" placeholder="usuario">
-                        <input type="text" class="fadeIn third" name="password" placeholder="contraseña">
-                        <button id="btnSolicitar" type="submit" class="btn btn-primary">Registrarse</button>
+                        <input type="text" class="fadeIn second" name="nombre" placeholder="nombre completo" required>
+                        <input type="text" class="fadeIn second" name="user" placeholder="usuario" required>
+                        <input type="password" class="fadeIn third" name="password" placeholder="contraseña" required>
+                        <button id="btnRegistrase" type="submit" class="btn btn-primary">Registrarse</button>
                     </form>
 
                     <div id="formFooter">

@@ -23,6 +23,17 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 </head>
 
 <body>
@@ -71,6 +82,11 @@
 
 
                                     <li class="nav-item ml-2">
+                                        <% if (data == "Success") { %>
+                                            <script>
+                                                alertify.success("Te haz registrado exitosamente,Inicia sesión.");
+                                            </script>
+                                         <% } %> 
                                         <form class="form-inline mx-2 my-2 my-lg-0">
                                             <input class="form-control mr-sm-2 mx-4" type="search"
                                                 placeholder="Escriba aqui..." aria-label="Search">
@@ -119,12 +135,16 @@
                     <div class="fadeIn first">
                         <img src="/img/user.png" id="icon" alt="User Icon" />
                     </div>
+                    <% if (data == "failed") { %>
+                        <script>
+                            alertify.error("Los datos son incorrectos.");
+                        </script>
+                     <% } %> 
 
-                    
-                    <form>
-                        <input type="text" id="login" class="fadeIn second" name="nomUser" placeholder="usuario">
-                        <input type="text" id="password" class="fadeIn third" name="" placeholder="contraseña">
-                        <input type="submit" class="fadeIn fourth" value="Iniciar Sesion">
+                    <form action="/login" method="post">
+                        <input type="text" id="login" class="fadeIn second" name="username" placeholder="usuario" required>
+                        <input type="password" id="password" class="fadeIn third" name="password" placeholder="contraseña" required>
+                        <button id="btnSolicitar" type="submit" class="btn btn-primary">Iniciar Sesion</button>
                     </form>
 
                     <div id="formFooter">
