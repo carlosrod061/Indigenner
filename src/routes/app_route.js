@@ -3,6 +3,7 @@ const router = express.Router();
 
 
 const Inicio = require('../controllers/Inicio');
+const Foro = require('../controllers/Foro');
 const Foros = require('../controllers/Foros');
 const Juegos = require ('../controllers/Juegos');
 const Novedades = require ('../controllers/Novedades');
@@ -13,6 +14,8 @@ const Desarrollador = require('../controllers/Desarrollador');
 router.get('/',Inicio.list);
 
 router.get('/foros',Foros.list);
+
+router.get('/foro',Foro.list);
 
 router.get('/juegos',Juegos.list)
 
@@ -26,7 +29,7 @@ router.get('/cerrarsesion', Iniciar.cerrarsesion);
 
 router.get('/registrarse',Registrarse.list);
 
-router.get('/registrarse',Desarrollador.list);
+router.get('/desarrollador',Desarrollador.list);
 
 router.post('/new-user',Registrarse.newUser);
 
