@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 
-
 const Inicio = require('../controllers/Inicio');
 const Foros = require('../controllers/Foros');
 const Juegos = require ('../controllers/Juegos');
@@ -19,6 +18,10 @@ router.get('/juegos',Juegos.list)
 router.get('/novedades',Novedades.list)
 
 router.get('/iniciarsesion',Iniciar.list);
+
+router.post('/login',Iniciar.login);
+
+router.get('/cerrarsesion', Iniciar.cerrarsesion);
 
 router.get('/registrarse',Registrarse.list);
 

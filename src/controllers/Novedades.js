@@ -2,7 +2,7 @@ const controller = {};
 
 
 controller.list = (req, res) => {
-    res.render('novedades');
+    res.render('novedades',{usuario: req.session.user_id});
 };
 
 
