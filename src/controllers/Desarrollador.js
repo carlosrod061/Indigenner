@@ -1,16 +1,6 @@
 const controller = {};
 
 const admin = require('firebase-admin');
-const bcrypt = require('bcryptjs');
-const fuctions = require('firebase-functions');
-var serviceAccount = require("../../indiginner-firebase-adminsdk-x3u93-5eb5b6298f.json");
-
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://indiginner-default-rtdb.firebaseio.com/'
-});
-
 
 const db = admin.firestore();
 
@@ -36,3 +26,5 @@ controller.newUser = async (req, res) => {
     res.render('iniciarsesion');
 
 };
+
+module.exports = controller;
