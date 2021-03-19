@@ -10,7 +10,7 @@ controller.list = (req, res) => {
 controller.foro = async (req, res) => {
     const data = req.body;
     const foros = db.collection('foro');
-    const foro = await foros.where('game', '==', true).get();
+    const foro = await foros.where('game', '==', 'Half Life 3').get();
     res.render('foro');
 };
 
