@@ -176,23 +176,20 @@
             </tr>
           </thead>
           <tbody class="content-table">
+            <% if (foroq) { %>
+              <% for (var i=0; i < foroq.docs.length; i++){ %>
+              <tr class="bg-light">
+                <td><%= foroq.docs[i].data().nombre %></td>
+                <td>
+                  <a class="btn btn-success" id="<%= data[i].iIdLibro %>" onclick="fnAgregaLibro(this)">Agregar</a>
+                </td>
+              </tr>
+              <%}%> 
+            <% } %>
+            
             <tr>
-              <td>10:11 (Plataformas)</td>
+              <td><%=foroq.docs[0].data().game%></td>
               <td>Plataforma</td>
-              <td>Car121Stack</td>
-              <td>2</td>
-              <td><button type="button" class="btn btn-success">IR</button></td>
-            </tr>
-            <tr>
-              <td>10:11 (Plataformas)</td>
-              <td>Plataforma</td>
-              <td>Car121Stack</td>
-              <td>2</td>
-              <td><button type="button" class="btn btn-success">IR</button></td>
-            </tr>
-            <tr>
-              <td>10:11 (Plataformas)</td>
-              <td>Plataform</td>
               <td>Car121Stack</td>
               <td>2</td>
               <td><button type="button" class="btn btn-success">IR</button></td>
