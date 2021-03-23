@@ -16,14 +16,16 @@ controller.list = (req, res) => {
 
 controller.login = async (req, res) => {
     const data = req.body;
+
     const users = db.collection('users');
     const usuario = await users.where('user', '==', data.username).get();
+
 
     
 
     if (!usuario.empty) {
+        
         let password = bcrypt.compareSync(data.password,usuario.docs[0].data().password);  
-        console.log(password);
 
         if (password) {
             req.session.user_id = data.username;
