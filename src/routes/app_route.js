@@ -15,7 +15,7 @@ router.get('/',Inicio.list);
 
 router.get('/foros',Foros.list);
 
-router.get('/foro',Foro.list);
+router.get('/foro/:name',Foro.list);
 
 router.get('/juegos',Juegos.list)
 
