@@ -186,7 +186,11 @@
                     <%= foroq.docs[i].data().comentarios %>
                   </td>
                   <td>
-                    <a class="btn btn-success" href="/foro/<%= foroq.docs[i].data().nombre %>" onclick="">Ir</a>
+                    <form action="/abrirForo" method="post">
+                      <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="<%= foroq.docs[i].data().nombre %>" hidden>
+                      <button id="" type="submit" class="btn btn-success">Ir</button>
+                    </form>
+           
                   </td>
                 </tr>
                 <%}%>
