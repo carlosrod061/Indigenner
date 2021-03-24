@@ -27,4 +27,8 @@ router.get('/registrarse',Registrarse.list);
 
 router.post('/new-user',Registrarse.newUser);
 
+router.post('/abrirForo',Foros.abrirForo);
+
+router.post('/comentar',Foros.comentar);
+
 module.exports = router;

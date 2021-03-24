@@ -150,11 +150,14 @@
             <li class="breadcrumb-item text-white">
               <a href="#" class="text-white">Foros</a>
             </li>
+            <li class="breadcrumb-item text-white">
+                <a href="#" class="text-white"><%= foroq.docs[0].data().game%></a>
+              </li>
           </ol>
         </nav>
         <div class="container">
           <div class="bg-dark row bg-secondary destacados">
-            <h6 id="destacados" class="ml-2 mt-1">Listado</h6>
+            <h6 id="destacados" class="ml-2 mt-1">Comentarios</h6>
           </div>
         </div>
 
@@ -162,11 +165,9 @@
         <table class="table table-hover table-dark mt-3">
           <thead class="thead-light">
             <tr>
-              <th scope="col">Tema</th>
-              <th scope="col">Categoria</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Comentario</th>
               <th scope="col">Autor</th>
-              <th scope="col">Respuestas</th>
-              <th scope="col">Acción</th>
             </tr>
           </thead>
           <tbody class="content-table">
@@ -174,23 +175,13 @@
               <% for (var i=0; i < foroq.docs.length; i++){ %>
                 <tr class="bg-dark">
                   <td>
-                    <%= foroq.docs[i].data().nombre %>
+                    <%= foroq.docs[i].data().hora %>
                   </td>
                   <td>
-                    <%= foroq.docs[i].data().categoria%>
+                    <%= foroq.docs[i].data().comentario%>
                   </td>
                   <td>
-                    <%= foroq.docs[i].data().autor %>
-                  </td>
-                  <td>
-                    <%= foroq.docs[i].data().comentarios %>
-                  </td>
-                  <td>
-                    <form action="/abrirForo" method="post">
-                      <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="<%= foroq.docs[i].data().nombre %>" hidden>
-                      <button id="" type="submit" class="btn btn-success">Ir</button>
-                    </form>
-           
+                    <%= foroq.docs[i].data().user %>
                   </td>
                 </tr>
                 <%}%>
@@ -198,7 +189,19 @@
           </tbody>
         </table>
 
-
+        <form action="/comentar" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Escribir comentario:</label>
+                <textarea class="form-control" id="" name="comentario" rows="3"></textarea>
+                <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="<%= foroq.docs[0].data().game%>" hidden>
+            </div>
+            <div class="row">
+                <div class="form-group mx-auto">
+                    <button id="" type="submit" class="btn btn-success">Comentar</button>
+                </div>
+            </div>
+          
+        </form>
 
       </div>
 
