@@ -42,6 +42,11 @@ controller.comentar = async(req,res) => {
             hora:hora_actual
         };
 
+        const infoComent = db.collection('juego').doc(data.nombreJuego);
+        const res = await infoComent.update({
+            comentarios: admin.firestore.comentarios.increment(1)
+        });
+
         await db.collection('foro').doc().create(newComentario);
 
         const infoForos = db.collection('foro');
