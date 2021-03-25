@@ -165,7 +165,6 @@
               <th scope="col">Tema</th>
               <th scope="col">Categoria</th>
               <th scope="col">Autor</th>
-              <th scope="col">Respuestas</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
@@ -181,9 +180,6 @@
                   </td>
                   <td>
                     <%= foroq.docs[i].data().autor %>
-                  </td>
-                  <td>
-                    <%= foroq.docs[i].data().comentarios %>
                   </td>
                   <td>
                     <form action="/abrirForo" method="post">
