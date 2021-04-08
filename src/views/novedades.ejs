@@ -164,7 +164,7 @@
                     </ol>
                 </nav>
 
-                <div class="container">
+                <!--<div class="container">
                   <div class="filters row mt-3 bg-dark pt-2 pb-2" style="justify-content: space-evenly; margin: auto;">
 
                     <div class="filter col-md-2 mt-1">
@@ -186,7 +186,7 @@
                     <button type="button" class="btn btn-danger ml-4 h-30">Filtrar</button>
 
                 </div>
-                </div>
+                </div>-->
 
                 <div class="clearfix"></div>
 
@@ -195,6 +195,8 @@
                  
 
                     <div class="contenedorjuegos mt-3">
+                        <% if (juegor) { %>
+                            <% for (var i=0; i < juegor.docs.length; i++){ %>
                         <div class="row">
                             <div class="col-md-12" style="justify-content: space-evenly;">
                                 <div class="row" style="float: left;">
@@ -202,26 +204,15 @@
                                 </div>
                                 <div class="textarea" style="background-color: white; color: black; margin-left: 17em;">
                                   <div class="form-group ml-2">
-                                    <small class="">Nombre:</small> <br>
-                                    <small>Autor:</small> <br>
-                                    <small>Calificacion:</small> <br>
+                                    <small class="">Nombre: <%= juegor.docs[i].data().nombre %></small> <br>
+                                    <small>Autor: <%= juegor.docs[i].data().autor %></small> <br>
+                                    <small>Descripción: <%= juegor.docs[i].data().descripcion %></small> <br>
                                   </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-12" style="justify-content: space-evenly;">
-                              <div class="row" style="float: left;">
-                                  <img src="img/proximamente.png" alt="" width="260" class="rounded card-game">
-                              </div>
-                              <div class="textarea" style="background-color: white; color: black; margin-left: 17em;">
-                                <div class="form-group ml-2">
-                                    <small class="">Nombre:</small> <br>
-                                    <small>Autor:</small> <br>
-                                    <small>Calificacion:</small> <br>
-                                </div>
-                              </div>
-                          </div>
+                        <%}%>
+                          <% } %>
                       </div>
 
                     </div>
