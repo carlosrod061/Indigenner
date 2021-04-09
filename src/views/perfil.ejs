@@ -125,10 +125,10 @@
 
         <div class="menulateral bg-dark mt-4 w-100 h-95 col-md-12">
           <% if (usuario!=null) { %>
-            <a href="/perfil"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
-        <% }else{%>
-            <a href="/iniciarsesion"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
-        <% } %>
+                        <a href="/perfil"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+                    <% }else{%>
+                        <a href="/iniciarsesion"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+                    <% } %>
           <hr>
           <a href="/novedades"><i class="fas fa-cubes ml-2 mt-2 pb-1"></i> Novedades</a>
           <hr>
@@ -171,7 +171,7 @@
                 <p><label for="exampleFormControlTextarea1">Usuario: <%=usuario%></label></p>
                 <p><label for="exampleFormControlTextarea1">Nombre: <%= usur.docs[0].data().name %></label></p>
                 <p><label for="exampleFormControlTextarea1">Descripción:</label></p>
-                <textarea disabled class="form-control" id="" name="descripcion" rows="6" style="resize: none; color: honeydew; background-color: grey; "><% if (usur.docs[0].data().descripcion==null || usur.docs[0].data().descripcion=="") { %> no hay descripcion <% }else{%> <%= usur.docs[0].data().descripcion %><% } %></textarea>
+                <p><textarea disabled class="form-control" id="" name="descripcion" rows="6" style="resize: none; color: honeydew; background-color: grey; "><% if (usur.docs[0].data().descripcion==null || usur.docs[0].data().descripcion=="") { %> no hay descripcion <% }else{%> <%= usur.docs[0].data().descripcion %><% } %></textarea></p>
                 <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="" hidden>
                 <p><label for="exampleFormControlTextarea1">Mis proyectos: </label></p>
                 
