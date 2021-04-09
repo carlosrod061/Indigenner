@@ -124,7 +124,11 @@
         <hr>
 
         <div class="menulateral bg-dark mt-4 w-100 h-95 col-md-12">
-          <a href=""><i class="fas fa-user ml-2 mt-2 pb-1"></i> Mi perfil</a>
+          <% if (usuario!=null) { %>
+            <a href="/perfil"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+        <% }else{%>
+            <a href="/iniciarsesion"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+        <% } %>
           <hr>
           <a href="/novedades"><i class="fas fa-cubes ml-2 mt-2 pb-1"></i> Novedades</a>
           <hr>
