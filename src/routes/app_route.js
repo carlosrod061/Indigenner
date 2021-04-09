@@ -10,6 +10,7 @@ const Novedades = require ('../controllers/Novedades');
 const Iniciar = require ('../controllers/Iniciar');
 const Registrarse = require('../controllers/Registrarse');
 const Desarrollador = require('../controllers/Desarrollador');
+const Perfil = require('../controllers/Perfil');
 
 router.get('/',Inicio.list);
 
@@ -18,6 +19,8 @@ router.get('/foros',Foros.list);
 router.get('/foro/:name',Foro.list);
 
 router.get('/juegos',Juegos.list)
+
+router.get('/perfil',Perfil.list)
 
 router.get('/novedades',Novedades.list)
 
@@ -36,5 +39,7 @@ router.post('/new-user',Registrarse.newUser);
 router.post('/abrirForo',Foros.abrirForo);
 
 router.post('/comentar',Foros.comentar);
+
+router.post('/actualizar',Perfil.actualizar);
 
 module.exports = router;
