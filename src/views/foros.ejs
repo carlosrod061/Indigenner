@@ -125,7 +125,11 @@
         <hr>
 
         <div class="menulateral bg-dark mt-4 w-100 h-95 col-md-12">
-          <a href=""><i class="fas fa-user ml-2 mt-2 pb-1"></i> Mi perfil</a>
+          <% if (usuario!=null) { %>
+            <a href="/perfil"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+        <% }else{%>
+            <a href="/iniciarsesion"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+        <% } %>
           <hr>
           <a href="/novedades"><i class="fas fa-cubes ml-2 mt-2 pb-1"></i> Novedades</a>
           <hr>
@@ -165,7 +169,6 @@
               <th scope="col">Tema</th>
               <th scope="col">Categoria</th>
               <th scope="col">Autor</th>
-              <th scope="col">Respuestas</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
@@ -181,9 +184,6 @@
                   </td>
                   <td>
                     <%= foroq.docs[i].data().autor %>
-                  </td>
-                  <td>
-                    <%= foroq.docs[i].data().comentarios %>
                   </td>
                   <td>
                     <form action="/abrirForo" method="post">

@@ -39,7 +39,7 @@
                     <div class="col-md-1">
                         <img class="logo d-block w-50 h-20 float-left mr-2" src="img/Logo.jpeg" alt="100">
                     </div>
-
+          
                     <div class="col-md-1">
                         <a class="navbar-brand d-block mx-2" href="#">Indigenner</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -48,11 +48,11 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
-
-
+          
+          
                     <div class="col-md-10">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+          
                             <div class="col-md-10">
                                 <ul class="navbar-nav mr-auto pt-1 justify-content-center">
                                     <li class="nav-item  mx-1">
@@ -68,8 +68,8 @@
                                     <li class="nav-item mx-1">
                                         <a class="nav-link " href="#">Proyectos</a>
                                     </li>
-
-
+          
+          
                                     <li class="nav-item ml-2">
                                         <form class="form-inline mx-2 my-2 my-lg-0">
                                             <input class="form-control mr-sm-2 mx-4" type="search"
@@ -80,13 +80,13 @@
                                         </form>
                                     </li>
                                 </ul>
-
+          
                             </div>
-
+          
                             <div class="col-md-2">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-
+          
                                         <% if (usuario!=null) { %>
                                             <a class="" href="#" id="navbarDropdown"
                                                 role="button" data-toggle="" aria-haspopup="true"
@@ -106,17 +106,17 @@
                                                     Iniciar sesion
                                                 </a>
                                                 <% } %>
-
-
+          
+          
                                     </li>
                                 </ul>
                             </div>
-
-
+          
+          
                         </div>
                     </div>
-
-
+          
+          
                 </nav>
             </header>
 
@@ -132,9 +132,13 @@
                 <hr>
 
                 <div class="menulateral bg-dark mt-4 w-100 h-95 col-md-12">
-                    <a href=""><i class="fas fa-user ml-2 mt-2 pb-1"></i> Mi perfil</a>
+                    <% if (usuario!=null) { %>
+                        <a href="/perfil"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+                    <% }else{%>
+                        <a href="/iniciarsesion"><i class="fas fa-user ml-2 mt-2 pb-1"></i>  Mi perfil</a>
+                    <% } %>
                     <hr>
-                    <a href=""><i class="fas fa-cubes ml-2 mt-2 pb-1"></i> Plataforma</a>
+                    <a href="/novedades"><i class="fas fa-cubes ml-2 mt-2 pb-1"></i> Novedades</a>
                     <hr>
                     <a href=""><i class="fas fa-crosshairs ml-2 mt-2 pb-1"></i> Accion</a>
                     <hr>
@@ -164,7 +168,7 @@
                     </ol>
                 </nav>
 
-                <div class="container">
+                <!--<div class="container">
                   <div class="filters row mt-3 bg-dark pt-2 pb-2" style="justify-content: space-evenly; margin: auto;">
 
                     <div class="filter col-md-2 mt-1">
@@ -183,17 +187,10 @@
                             <option value="3">Charles99</option>
                         </select>
                     </div>
-                    <div class="filter col-md-2 mt-1">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Orden</option>
-                            <option value="1">Ascendente</option>
-                            <option value="2">Descendente</option>
-                        </select>
-                    </div>
                     <button type="button" class="btn btn-danger ml-4 h-30">Filtrar</button>
 
                 </div>
-                </div>
+                </div>-->
 
                 <div class="clearfix"></div>
 
@@ -202,33 +199,24 @@
                  
 
                     <div class="contenedorjuegos mt-3">
+                        <% if (juegor) { %>
+                            <% for (var i=0; i < juegor.docs.length; i++){ %>
                         <div class="row">
                             <div class="col-md-12" style="justify-content: space-evenly;">
                                 <div class="row" style="float: left;">
-                                    <img src="img/indie.jpg" alt="" width="260" class="rounded card-game">
+                                    <img src="img/proximamente.png" alt="" width="260" class="rounded card-game">
                                 </div>
                                 <div class="textarea" style="background-color: white; color: black; margin-left: 17em;">
                                   <div class="form-group ml-2">
-                                    <small class="">Nombre:</small> <br>
-                                    <small>Autor:</small> <br>
-                                    <small>Calificacion:</small> <br>
+                                    <small class="">Nombre: <%= juegor.docs[i].data().nombre %></small> <br>
+                                    <small>Autor: <%= juegor.docs[i].data().autor %></small> <br>
+                                    <small>Descripción: <%= juegor.docs[i].data().descripcion %></small> <br>
                                   </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-12" style="justify-content: space-evenly;">
-                              <div class="row" style="float: left;">
-                                  <img src="img/juegosindie.jpg" alt="" width="260" class="rounded card-game">
-                              </div>
-                              <div class="textarea" style="background-color: white; color: black; margin-left: 17em;">
-                                <div class="form-group ml-2">
-                                    <small class="">Nombre:</small> <br>
-                                    <small>Autor:</small> <br>
-                                    <small>Calificacion:</small> <br>
-                                </div>
-                              </div>
-                          </div>
+                        <%}%>
+                          <% } %>
                       </div>
 
                     </div>

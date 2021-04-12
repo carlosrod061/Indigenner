@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "GoodTimes";
+    src: url("goodtimes.ttf");
+  }
+
 *{
-    font-family: 'Good Times', arial;
+    font-family: 'GoodTimes', arial;
 }
 
 .navbar-nav ul li{
