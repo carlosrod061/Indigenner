@@ -141,14 +141,32 @@
                         </script>
                      <% } %> 
 
+                     <% if (data == "El correo ha sido enviado, verifique su bandeja de entrada") { %>
+                        <script>
+                            alertify.success("El correo ha sido enviado, verifique su bandeja de entrada");
+                        </script>
+                     <% } %> 
+
+                     <% if (data == "Se cambio exitosamente la contraseña, intente iniciar sesion.") { %>
+                        <script>
+                            alertify.success("Se cambio exitosamente la contraseña, intente iniciar sesion.");
+                        </script>
+                     <% } %> 
+
                     <form action="/login" method="post">
                         <input type="text" id="login" class="fadeIn second" name="username" placeholder="usuario" required>
-                        <input type="password" id="password" class="fadeIn third" name="password" placeholder="contraseña" required>
+                        <div class="input-group-append">
+                            <input type="password" id="txtPassword" class="fadeIn third" name="password" placeholder="contraseña" required>
+                            <button id="show_password" class="btn btn-primary" type="button"
+                                onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+                        </div>
+
                         <button id="btnSolicitar" type="submit" class="btn btn-primary">Iniciar Sesion</button>
                     </form>
 
                     <div id="formFooter">
-                        <a class="underlineHover text-success" href="/registrarse">Registrarse</a>
+                        <a class="underlineHover text-success" href="/registrarse">Registrarse</a> <br>
+                        <small><a class="underlineHover text-info mt-2" href="/sendEmail">Olvide mi contraseña</a></small> 
                     </div>
 
                 </div>
@@ -156,6 +174,18 @@
 
         </div>
 
+        <script type="text/javascript">
+            function mostrarPassword() {
+                var cambio = document.getElementById("txtPassword");
+                if (cambio.type == "password") {
+                    cambio.type = "text";
+                    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+                } else {
+                    cambio.type = "password";
+                    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+                }
+            }
+        </script>
 
 
         <footer

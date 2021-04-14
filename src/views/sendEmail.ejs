@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse</title>
+    <title>Envio de correo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="css/iniciarsesion.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
@@ -36,8 +34,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
-    <script src="js/registrarse.js"></script>
-
 </head>
 
 <body>
@@ -49,11 +45,7 @@
             <header class="col-md-12">
 
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                 <% if (data == "Failed") { %>
-                    <script>
-                        alertify.warning("El nombre de usuario ya existe, pruebe con otro.");
-                    </script>
-                 <% } %> 
+
 
                     <div class="col-md-1">
                         <img class="logo d-block w-50 h-20 float-left mr-2" src="img/Logo.jpeg" alt="100">
@@ -90,6 +82,11 @@
 
 
                                     <li class="nav-item ml-2">
+                                        <% if (data == "Error el usuario no existe en la base de datos.") { %>
+                                            <script>
+                                                alertify.error("Error el usuario no existe en la base de datos.");
+                                            </script>
+                                         <% } %> 
                                         <form class="form-inline mx-2 my-2 my-lg-0">
                                             <input class="form-control mr-sm-2 mx-4" type="search"
                                                 placeholder="Escriba aqui..." aria-label="Search">
@@ -129,49 +126,22 @@
 
         <div class="contenido row pt-4 ml-4">
 
+
             <div class="wrapper fadeInDown">
-                <div id="formContent">
+                <div id="formContent" class="pl-3 pt-3 pr-3 pb-3">
                     <!-- Tabs Titles -->
-
-                    <!-- Icon -->
-                    <div class="fadeIn first">
-                        <img src="/img/user.png" id="icon" alt="User Icon" />
-                    </div>
-
-
-                    <form action="/new-user" method="post">
-                        <input type="text" class="fadeIn second" name="nombre" placeholder="nombre completo" required>
-                        <input type="text" class="fadeIn second" name="user" placeholder="usuario" required>
-                        <div class="input-group-append">
-                            <input type="password" id="txtPassword" class="fadeIn third" name="password" placeholder="contraseña" required>
-                            <button id="show_password" class="btn btn-primary" type="button"
-                                onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
-                        </div>
-                        <input type="email" class="fadeIn third" name="email" placeholder="email" required>
-                        <button id="btnRegistrase" type="submit" class="btn btn-primary">Registrarse</button>
+                   <b> <h5>Envio de correo</h5> </b> 
+                    <form action="/resetPassword" method="post">
+                        <input type="text" id="login" class="fadeIn second" name="username" placeholder="Ingrese nombre de usuario" required>
+                        <button id="btnSolicitar" type="submit" class="btn btn-primary mb-3">Enviar solicitud</button>
+                        <small><p class="text-success">Nota: Se hara envio de un link para reestablecer la contraseña a el correo electronico con el que el usuario se registro, para reestablecer la contraseña.</p></small>
                     </form>
-
-                    <div id="formFooter">
-                        <a class="underlineHover text-success" href="/iniciarsesion">Iniciar sesion</a>
-                    </div>
-
+    
                 </div>
             </div>
 
         </div>
 
-        <script type="text/javascript">
-            function mostrarPassword() {
-                var cambio = document.getElementById("txtPassword");
-                if (cambio.type == "password") {
-                    cambio.type = "text";
-                    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-                } else {
-                    cambio.type = "password";
-                    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-                }
-            }
-        </script>
 
 
         <footer

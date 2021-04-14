@@ -173,7 +173,9 @@
             </tr>
           </thead>
           <tbody class="content-table">
-            <% if (foroq) { %>
+            <% 
+        
+              if (foroq) { %>
               <% for (var i=0; i < foroq.docs.length; i++){ %>
                 <tr class="bg-dark">
                   <td>
@@ -187,10 +189,11 @@
                   </td>
                   <td>
                     <form action="/abrirForo" method="post">
-                      <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="<%= foroq.docs[i].data().nombre %>" hidden>
+                      <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo"
+                        value="<%= foroq.docs[i].data().nombre %>" hidden>
                       <button id="" type="submit" class="btn btn-success">Ir</button>
                     </form>
-           
+
                   </td>
                 </tr>
                 <%}%>

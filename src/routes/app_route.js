@@ -9,8 +9,10 @@ const Juegos = require ('../controllers/Juegos');
 const Novedades = require ('../controllers/Novedades');
 const Iniciar = require ('../controllers/Iniciar');
 const Registrarse = require('../controllers/Registrarse');
+
 const Desarrollador = require('../controllers/Desarrollador');
 const Perfil = require('../controllers/Perfil');
+const Reestablecer = require('../controllers/ResetPassword');
 
 router.get('/',Inicio.list);
 
@@ -41,5 +43,13 @@ router.post('/abrirForo',Foros.abrirForo);
 router.post('/comentar',Foros.comentar);
 
 router.post('/actualizar',Perfil.actualizar);
+
+router.get('/sendEmail',Reestablecer.sendEmail);
+
+router.post('/resetPassword',Reestablecer.resetPassword);
+
+router.get('/settingPassword/:user',Reestablecer.settingPassword);
+
+router.post('/settingPassword/',Reestablecer.settingPasswordPost);
 
 module.exports = router;
