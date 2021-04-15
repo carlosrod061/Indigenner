@@ -155,7 +155,7 @@
               <a href="#" class="text-white">Foros</a>
             </li>
             <li class="breadcrumb-item text-white">
-                <a href="#" class="text-white"><%= foroq.docs[0].data().game%></a>
+                <a href="#" class="text-white"><%= juegor.docs[0].data().nombre%></a>
               </li>
           </ol>
         </nav>
@@ -197,7 +197,7 @@
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Escribir comentario:</label>
                 <textarea class="form-control" id="" name="comentario" rows="3"></textarea>
-                <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="<%= foroq.docs[0].data().game%>" hidden>
+                <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="<%= juegor.docs[0].data().nombre%>" hidden>
             </div>
             <div class="row">
                 <div class="form-group mx-auto">
