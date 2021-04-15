@@ -20,10 +20,12 @@ controller.abrirForo = async (req, res) => {
 
     const infoForos = db.collection('foro');
     const foro = await infoForos.where('game', '==', data.nombreJuego).get();
-
+    const juegos = db.collection('juego');
+    const juego = await juegos.where('nombre', '==', data.nombreJuego).get();
     res.render('foro', {
         usuario: req.session.user_id,
-        foroq: foro
+        foroq: foro,
+        juegor: juego
     });
 
 }
@@ -51,9 +53,12 @@ controller.comentar = async (req, res) => {
       
         const infoForos = db.collection('foro');
         const foro = await infoForos.where('game', '==', data.nombreJuego).get();
+        const juegos = db.collection('juego');
+        const juego = await juegos.where('nombre', '==', data.nombreJuego).get();
         res.render('foro', {
             usuario: req.session.user_id,
-            foroq: foro
+            foroq: foro,
+            juegor: juego
         });
     }
 
