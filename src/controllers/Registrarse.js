@@ -27,7 +27,8 @@ controller.newUser = async (req, res) => {
             name: data.nombre,
             user: data.user,
             password: passwordHash,
-            email: data.email
+            email: data.email,
+            descripcion: 'Sin descripcion'
         };
 
         await db.collection('users').doc().create(newUser);
