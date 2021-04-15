@@ -13,19 +13,22 @@ controller.list = async (req, res) => {
 
 controller.actualizar = async(req,res) => {
     const data = req.body;
-    const usuarios = db.collection('users').doc(req.session.user_id);
-    const actua = {
-        name: usuarios.user,
-        password: usuarios.password,
-        user: usuarios.user,
-        descripcion: data.descripcion
-    };
+    const users = db.collection('users');
+    const usuario = await users.where('user', '==', data.username).get();
 
-    await db.collection('users').doc(req.session.user_id).set(actua);
+    usuario.forEach(doc => {
+        db.collection('users').doc(doc.id).update({
+            name:data.nombre,
+            descripcion:data.descripcion
+        })  
+    });
 
-    usuarios = db.collection('users');
+    const usuarios = db.collection('users');
     const usu = await usuarios.where('user', '==', req.session.user_id).get();
-    res.render('perfil',{usuario: req.session.user_id,usur: usu});
+    const juegos = db.collection('juego');
+    const juego = await juegos.where('autor', '==', req.session.user_id).get();
+    res.render('perfil',{usuario: req.session.user_id, usur: usu, juegor: juego});
+    
 }
 
 module.exports = controller;
