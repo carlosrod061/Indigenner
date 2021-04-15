@@ -12,6 +12,8 @@ const Registrarse = require('../controllers/Registrarse');
 
 const Desarrollador = require('../controllers/Desarrollador');
 const Perfil = require('../controllers/Perfil');
+const ModificarPerfil = require('../controllers/ModificarPerfil');
+const ModificarProyecto = require('../controllers/ModificarProyecto');
 const newProyecto = require('../controllers/newProyecto');
 const Reestablecer = require('../controllers/ResetPassword');
 
@@ -24,6 +26,8 @@ router.get('/foro/:name',Foro.list);
 router.get('/juegos',Juegos.list)
 
 router.get('/perfil',Perfil.list)
+
+router.get('/modificarperfil',ModificarPerfil.list)
 
 router.get('/newproyecto',newProyecto.list)
 
@@ -44,6 +48,8 @@ router.get('/desarrollador',Desarrollador.list);
 router.post('/new-user',Registrarse.newUser);
 
 router.post('/abrirForo',Foros.abrirForo);
+
+router.post('/abrirProyecto',ModificarProyecto.abrirProyecto);
 
 router.post('/comentar',Foros.comentar);
 
