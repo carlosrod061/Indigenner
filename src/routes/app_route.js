@@ -12,6 +12,7 @@ const Registrarse = require('../controllers/Registrarse');
 
 const Desarrollador = require('../controllers/Desarrollador');
 const Perfil = require('../controllers/Perfil');
+const newProyecto = require('../controllers/newProyecto');
 const Reestablecer = require('../controllers/ResetPassword');
 
 router.get('/',Inicio.list);
@@ -23,6 +24,10 @@ router.get('/foro/:name',Foro.list);
 router.get('/juegos',Juegos.list)
 
 router.get('/perfil',Perfil.list)
+
+router.get('/newproyecto',newProyecto.list)
+
+router.post('/crearproyecto',newProyecto.crearproyecto)
 
 router.get('/novedades',Novedades.list)
 
