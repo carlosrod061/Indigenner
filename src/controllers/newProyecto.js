@@ -8,27 +8,25 @@ controller.list = async (req, res) => {
     const usu = await usuarios.where('user', '==', req.session.user_id).get();
     const juegos = db.collection('juego');
     const juego = await juegos.where('autor', '==', req.session.user_id).get();
-    res.render('perfil',{usuario: req.session.user_id, usur: usu, juegor: juego});
+    res.render('newproyecto',{usuario: req.session.user_id, usur: usu, juegor: juego});
 };
 
-controller.actualizar = async(req,res) => {
+controller.crearproyecto = async(req,res) => {
     const data = req.body;
-    const users = db.collection('users');
-    const usuario = await users.where('user', '==', data.username).get();
+    const actua = {
+        autor: req.session.user_id,
+        categoria: data.categoria,
+        descripcion: data.descripcion,
+        nombre: data.nombre
+    };
 
-    usuario.forEach(doc => {
-        db.collection('users').doc(doc.id).update({
-            name:data.nombre,
-            descripcion:data.descripcion
-        })  
-    });
+    await db.collection('juego').doc().create(actua);
 
     const usuarios = db.collection('users');
     const usu = await usuarios.where('user', '==', req.session.user_id).get();
     const juegos = db.collection('juego');
     const juego = await juegos.where('autor', '==', req.session.user_id).get();
     res.render('perfil',{usuario: req.session.user_id, usur: usu, juegor: juego});
-    
 }
 
 module.exports = controller;

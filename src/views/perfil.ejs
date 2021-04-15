@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foros</title>
+  <title>Perfil</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
@@ -170,9 +170,12 @@
             <div class="form-group">
                 <p><label for="exampleFormControlTextarea1">Usuario: <%=usuario%></label></p>
                 <p><label for="exampleFormControlTextarea1">Nombre: <%= usur.docs[0].data().name %></label></p>
-                <p><label for="exampleFormControlTextarea1">Descripción:</label></p>
+                <!--<p><label for="exampleFormControlTextarea1">Descripción:</label></p>
                 <p><textarea disabled class="form-control" id="" name="descripcion" rows="6" style="resize: none; color: honeydew; background-color: grey; "><% if (usur.docs[0].data().descripcion==null || usur.docs[0].data().descripcion=="") { %> no hay descripcion <% }else{%> <%= usur.docs[0].data().descripcion %><% } %></textarea></p>
-                <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo" value="" hidden>
+                <p><a class="btn btn-success" href="/modificarperfil" id="" role="button"
+                  data-toggle="" aria-haspopup="true" aria-expanded="false">
+                  Actualizar mis datos
+                </a></p>-->
                 <p><label for="exampleFormControlTextarea1">Mis proyectos: </label></p>
                 
                 <table class="table table-hover table-dark mt-3">
@@ -180,7 +183,7 @@
                       <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Categoria</th>
-                        <th scope="col"></th>
+                        <!--<th scope="col"></th>-->
                       </tr>
                     </thead>
                     <tbody class="content-table">
@@ -193,15 +196,22 @@
                             <td>
                               <%= juegor.docs[i].data().categoria%>
                             </td>
-                            <td>
-                              <button id="" type="submit" class="btn btn-success">Ir</button>
-                            </td>
+                            <!--<td>
+                              <form action="/abrirProyecto" method="post">
+                                <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo"
+                                  value="<%= juegor.docs[i].data().nombre %>" hidden>
+                                <button id="" type="submit" class="btn btn-success">Ir</button>
+                              </form>
+                            </td>-->
                           </tr>
                           <%}%>
                             <% } %>
                     </tbody>
                   </table>
-            
+                  <a class="btn btn-success" href="/newproyecto" id="" role="button"
+                    data-toggle="" aria-haspopup="true" aria-expanded="false">
+                    Crear Proyecto
+                  </a>
             </div>
 
           
