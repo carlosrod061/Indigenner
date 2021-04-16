@@ -51,6 +51,8 @@ router.post('/abrirForo',Foros.abrirForo);
 
 router.post('/abrirProyecto',ModificarProyecto.abrirProyecto);
 
+router.post('/actualizarproyecto',ModificarProyecto.actualizarproyecto);
+
 router.post('/comentar',Foros.comentar);
 
 router.post('/actualizar',Perfil.actualizar);
