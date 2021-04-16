@@ -188,7 +188,7 @@
                       <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Categoria</th>
-                        <th scope="col"></th>
+                        <!--<th scope="col"></th>-->
                       </tr>
                     </thead>
                     <tbody class="content-table">
@@ -201,13 +201,13 @@
                             <td>
                               <%= juegor.docs[i].data().categoria%>
                             </td>
-                            <td>
+                            <!--<td>
                               <form action="/abrirProyecto" method="post">
                                 <input type="text" class="fadeIn second" name="nombreJuego" placeholder="nombre completo"
                                   value="<%= juegor.docs[i].data().nombre %>" hidden>
                                 <button id="" type="submit" class="btn btn-success">Ir</button>
                               </form>
-                            </td>
+                            </td>-->
                           </tr>
                           <%}%>
                             <% } %>
